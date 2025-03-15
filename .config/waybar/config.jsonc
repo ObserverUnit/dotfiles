@@ -1,0 +1,107 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 15,
+    "modules-left": ["temperature", "group/hardware", "hyprland/workspaces"],
+    "modules-center": ["wlr/taskbar"],
+    "modules-right": ["tray", "backlight", "pulseaudio", "network", "battery", "clock", "custom/power"],
+    "hyprland/workspaces": {
+     	"format": "{icon}"
+    },
+    "group/hardware": {
+	"orientation": "inherit",
+	"modules": [
+		"cpu",
+		"memory"
+	],
+	"drawer": {
+        	"transition-duration": 500,
+        	"children-class": "not-power"
+    	}
+     },
+    "cpu": {
+	"format": "{}% "
+    },
+    "memory": {
+    	"format": "{used:0.1f}G/{total:0.1f}G ",
+	"tooltip-format": "{}% used"
+    },
+    "temperature": {
+    	"critical-threshold": 70,
+	"format-critical": "{temperatureC}°C ",
+    	"format": "{temperatureC}°C "
+    },
+    "pulseaudio": {       
+	"format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "backlight": {
+    	"format": "{percent}% {icon}",
+    	"format-icons": ["", ""]
+    },
+    "custom/power": {
+        "format" : "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // >
+        "menu-actions": {
+                "shutdown": "shutdown",
+                "reboot": "reboot",
+                "suspend": "systemctl suspend",
+                "hibernate": "systemctl hibernate"
+        }
+    },
+    "keyboard-state": {
+	"numlock": true,
+	"capslock": true,
+	"format": "{icon}"
+    },
+    "network": {
+	"format": "{icon}",
+	"format-wifi": "{icon}  {bandwidthUpBits}  {bandwidthDownBits} ",
+	"tooltip-format": "{essid}",
+	"format-disconnected": "󰖪",
+	"format-icons": {
+		"wifi": [
+			"󰤯",
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		]
+	}
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+	"format-charging": "{capacity}% {icon}󱎔",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰁿", "󰂁", "󰂂", "󰁹"]
+    },
+    "wlr/taskbar": {
+	    "on-click": "activate",
+	    "on-click-right": "close",
+	    "icon-theme": "Gruvbox-Plus-Dark"
+    },
+    "tray": {
+	"icon-size": 18,
+	"spacing": 15,
+	"show-passive-items": true
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    }
+}
+

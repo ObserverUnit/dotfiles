@@ -1,0 +1,63 @@
+@define-color bg-color #282828;
+@define-color bg rgba(40, 40, 40, 0.7);
+@define-color color #ebdbb2;
+@define-color border-color #689d6a;
+@define-color text-color @color;
+@define-color red #cc241d;
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @color;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+.module {
+    color: @text-color;
+    border-radius: 10px;
+    background-color: @bg-color;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 6px;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    border-radius: 5px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {    
+    background-color: transparent;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @text-color;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+}
+
+
+

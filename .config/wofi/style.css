@@ -1,0 +1,58 @@
+/* TODO: unifiy color definitions */
+@define-color bg #282828;
+@define-color bg-bright #3c3836;
+@define-color text #ebdbb2;
+@define-color text-bright #fbf1c7;
+
+window {
+margin: 0px;
+border: 1px solid #689d6a;
+border-radius: 10px;
+background-color: @bg;
+}
+
+#input {
+margin: 5px;
+border: none;
+color: #f8f8f2;
+background-color: @bg-bright;
+}
+
+#inner-box {
+margin: 5px;
+border: none;
+background-color: @bg;
+}
+
+#outer-box {
+margin: 5px;
+border: none;
+background-color: @bg;
+}
+
+#scroll {
+margin: 0px;
+border: none;
+}
+
+#text {
+margin: 5px;
+border: none;
+color: @text;
+} 
+
+#entry.activatable #text {
+color: @text;
+}
+
+#entry > * {
+color: @text;
+}
+
+#entry:selected {
+background-color: @bg-bright;
+}
+
+#entry:selected #text {
+font-weight: bold;
+}
