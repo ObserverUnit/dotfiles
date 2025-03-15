@@ -1,0 +1,6 @@
+[submodule "repos/gruvbox-plus-icon-pack"]
+	path = repos/gruvbox-plus-icon-pack
+	url = https://github.com/SylEleuth/gruvbox-plus-icon-pack
+[submodule "repos/Gruvbox-GTK-Theme"]
+	path = repos/Gruvbox-GTK-Theme
+	url = https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme
